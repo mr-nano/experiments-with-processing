@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"
+        integrity="sha512-lbO95HE52QWwrDVEaDJmW9Xr8UIfMpRFT3akB8ett7lGfWsrGKz07L6wfwnF3KJ3T4a8cZupAKoI9Q2jH+0QIA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+    <script>
+        var sketch = function (processing) {
+            processing.setup = function () {
+                processing.size(400, 400);
+            }
+            processing.draw = function () {
+                processing.background(255);
+                processing.fill(0);
+                processing.ellipse(processing.mouseX, processing.mouseY, 50, 50);
+            }
+        }
+        var canvas = document.getElementById("canvas");
+        var processingInstance = new Processing(canvas, sketch);
+    </script>
+
+</body>
+
+</html>
